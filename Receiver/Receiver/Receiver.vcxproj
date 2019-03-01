@@ -81,8 +81,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Simon\Desktop\OpenCV_GStreamer\ThirdParty\OpenCV\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Simon\Desktop\OpenCV_GStreamer\ThirdParty\OpenCV\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\ThirdParty\OpenCV\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\ThirdParty\OpenCV\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
