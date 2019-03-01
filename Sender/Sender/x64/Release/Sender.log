@@ -1,1 +1,6 @@
-﻿
+﻿  pch.cpp
+  Sender.cpp
+  Generating code
+  All 190 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Sender.vcxproj -> C:\Users\Simon\Desktop\OpenCV_GStreamer\Sender\x64\Release\Sender.exe
