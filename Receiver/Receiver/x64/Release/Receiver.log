@@ -1,1 +1,6 @@
-﻿
+﻿  pch.cpp
+  Receiver.cpp
+  Generating code
+  All 189 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Receiver.vcxproj -> C:\Users\Simon\Desktop\OpenCV_GStreamer\Receiver\x64\Release\Receiver.exe

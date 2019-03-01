@@ -1,21 +1,38 @@
-// Receiver.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include "pch.h"
+
+#include <opencv2/opencv.hpp>
+using namespace cv;
+
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+    // The sink caps for the 'rtpjpegdepay' need to match the src caps of the 'rtpjpegpay' of the sender pipeline
+    // Added 'videoconvert' at the end to convert the images into proper format for appsink, without
+    // 'videoconvert' the receiver will not read the frames, even though 'videoconvert' is not present
+    // in the original working pipeline
+    VideoCapture cap("udpsrc port=5000 ! application/x-rtp,media=video,payload=26,clock-rate=90000,encoding-name=JPEG,framerate=30/1 ! rtpjpegdepay ! jpegdec ! videoconvert ! appsink",CAP_GSTREAMER);
+
+
+    if (!cap.isOpened()) {
+        cerr <<"VideoCapture not opened"<<endl;
+        exit(-1);
+    }
+
+    while (true) {
+
+        Mat frame;
+
+        cap.read(frame);
+
+        imshow("receiver", frame);
+
+        if (waitKey(1) == 27) {
+            break;
+        }
+    }
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
