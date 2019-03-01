@@ -1,5 +1,4 @@
-*swp
+*.swp
 */x64/
-*/*/x64/
-Sender/.vs/
-Receiver/.vs/
+*/*/x64/Release/
+*/.vs/

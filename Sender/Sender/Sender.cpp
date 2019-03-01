@@ -1,3 +1,11 @@
+/*
+* Sender.cpp: Sender for OpenCV_GStreamer example
+*
+* Copyright (C) 2019 Simon D. Levy
+*
+* MIT License
+*/
+
 #include "pch.h"
 
 #include <opencv2/opencv.hpp>
