@@ -6,7 +6,9 @@
 * MIT License
 */
 
+#ifdef _WIN32
 #include "pch.h"
+#endif
 
 #include <opencv2/opencv.hpp>
 using namespace cv;
@@ -43,4 +45,3 @@ int main()
 
     return 0;
 }
-
