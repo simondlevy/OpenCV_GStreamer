@@ -2,8 +2,9 @@ linux/Sender
 linux/Receiver
 *.o
 *.swp
-*/x64/
-*/*/x64/Release/
+Windows/*/x64/
+Windows/*/x64/
+Windows/*/*/x64
 Windows/*/.vs/
 *.log
 *.ipch
