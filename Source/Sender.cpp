@@ -18,11 +18,17 @@ int main()
 {
     VideoCapture cap(0);
 	
-    VideoWriter out("appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=127.0.0.1 port=5000",CAP_GSTREAMER,0,30,Size(640,480),true);
+    if (!cap.isOpened()) {
+        cerr <<"VideoCapture not opened"<<endl;
+        exit(-1);
+    }
+
+    VideoWriter writer("appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=132.72.115.163 port=5000",
+            CAP_GSTREAMER,0,30,Size(640,480),true);
 
 	
-    if (!cap.isOpened() | !out.isOpened()) {
-        cerr <<"VideoCapture or VideoWriter not opened"<<endl;
+    if (!writer.isOpened()) {
+        cerr <<"VideoWriter not opened"<<endl;
         exit(-1);
     }
 
@@ -32,7 +38,7 @@ int main()
 
         cap.read(frame);
 
-        out.write(frame);
+        writer.write(frame);
 
         imshow("sender", frame);
 

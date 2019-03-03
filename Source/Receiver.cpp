@@ -22,12 +22,11 @@ int main()
     // in the original working pipeline
     VideoCapture cap("udpsrc port=5000 ! application/x-rtp,media=video,payload=26,clock-rate=90000,encoding-name=JPEG,framerate=30/1 ! rtpjpegdepay ! jpegdec ! videoconvert ! appsink",CAP_GSTREAMER);
 
-
     if (!cap.isOpened()) {
         cerr <<"VideoCapture not opened"<<endl;
         exit(-1);
     }
-
+    
     while (true) {
 
         Mat frame;
