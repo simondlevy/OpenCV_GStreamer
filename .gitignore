@@ -1,3 +1,6 @@
+linux/Sender
+linux/Receiver
+*.o
 *.swp
 */x64/
 */*/x64/Release/
