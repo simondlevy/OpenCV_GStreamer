@@ -2,3 +2,5 @@
 Simple Visual Studio C++ example of using OpenCV with GStreamer
 
 Adapted from: https://stackoverflow.com/questions/46219454/how-to-open-a-gstreamer-pipeline-from-opencv-with-videowriter
+
+For Windows, make sure to build the Release version, not Debug version.
