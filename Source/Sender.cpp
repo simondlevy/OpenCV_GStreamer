@@ -23,8 +23,8 @@ int main()
         exit(-1);
     }
 
-    VideoWriter writer("appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=132.72.115.163 port=5000",
-            CAP_GSTREAMER,0,30,Size(640,480),true);
+    VideoWriter writer("appsrc ! videoconvert ! x264enc noise-reduction=10000 tune=zerolatency byte-stream=true bitrate=3000 threads=2 ! h264parse config-interval=1 ! rtph264pay ! udpsink host=127.0.0.1 port=5000", 
+		0, (double)30, cv::Size(640, 480), true);
 
 	
     if (!writer.isOpened()) {

@@ -1,8 +1,7 @@
-﻿  Receiver.cpp
+﻿  pch.cpp
+  Receiver.cpp
   Generating code
-  0 of 189 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  All 189 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Receiver.vcxproj -> C:\Users\Simon\Desktop\OpenCV_GStreamer\Windows\Receiver\x64\Release\Receiver.exe
+  Receiver.vcxproj -> C:\Users\owner\Desktop\OpenCV_GStreamer\Windows\Receiver\x64\Release\Receiver.exe
           1 file(s) copied.

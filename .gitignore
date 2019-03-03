@@ -5,3 +5,5 @@ linux/Receiver
 */x64/
 */*/x64/Release/
 */.vs/
+*.log
+*.ipch
