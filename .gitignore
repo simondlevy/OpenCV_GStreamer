@@ -4,7 +4,7 @@ linux/Receiver
 *.swp
 */x64/
 */*/x64/Release/
-*/.vs/
+Windows/*/.vs/
 *.log
 *.ipch
 *.opendb
