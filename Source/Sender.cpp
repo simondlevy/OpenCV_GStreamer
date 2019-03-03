@@ -23,7 +23,8 @@ int main()
         exit(-1);
     }
 
-	VideoWriter writer("appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=127.0.0.1 port=5000", CAP_GSTREAMER, 0, 30, Size(640, 480), true);
+	VideoWriter writer("appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=127.0.0.1 port=5000", 
+            CAP_GSTREAMER, 0, 30, Size(640, 480), true);
 
 
 	
