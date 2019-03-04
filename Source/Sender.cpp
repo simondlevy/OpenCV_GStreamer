@@ -16,18 +16,20 @@ using namespace std;
 
 int main()
 {
-    VideoCapture cap(0);
+    VideoCapture cap(1);
 	
     if (!cap.isOpened()) {
         cerr <<"VideoCapture not opened"<<endl;
         exit(-1);
     }
 
-	VideoWriter writer("appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=127.0.0.1 port=5000", 
-            0, 30, Size(640, 480), true);
+	VideoWriter writer(
+		"appsrc ! videoconvert ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! jpegenc ! rtpjpegpay ! udpsink host=127.0.0.1 port=5000", 
+        0,		// fourcc 
+		30,		// fps
+		Size(640, 480), 
+		true);	// isColor
 
-
-	
     if (!writer.isOpened()) {
         cerr <<"VideoWriter not opened"<<endl;
         exit(-1);
@@ -40,12 +42,6 @@ int main()
         cap.read(frame);
 
         writer.write(frame);
-
-        imshow("sender", frame);
-
-        if (waitKey(1) == 27) {
-            break;
-        }
     }
 
     return 0;
