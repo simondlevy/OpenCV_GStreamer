@@ -16,7 +16,7 @@ using namespace std;
 
 int main()
 {
-    VideoCapture cap(1);
+    VideoCapture cap(0);
 	
     if (!cap.isOpened()) {
         cerr <<"VideoCapture not opened"<<endl;
